@@ -1,5 +1,7 @@
 package io.github.lingmulongtai.liquidglass.sample
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -36,8 +38,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
@@ -85,7 +90,20 @@ internal fun KitGallery(dark: Boolean, onToggleTheme: () -> Unit) {
         hapticsEnabled = haptics,
         style = defaults.copy(containers = defaults.containers.copy(tint = tint, frost = frost))
     ) {
-        GlassBackdropLayout(Modifier.fillMaxSize()) {
+        GlassBackdropLayout(Modifier.fillMaxSize(), background = {
+            Image(
+                painter = painterResource(R.drawable.gallery_sunset),
+                contentDescription = null,
+                modifier = Modifier.matchParentSize(),
+                contentScale = ContentScale.Crop
+            )
+            val scrim = if (dark) {
+                listOf(Color(0xCC071519), Color(0x40071519), Color(0x99071519))
+            } else {
+                listOf(Color(0xE0EFF7F6), Color(0x99EFF7F6), Color(0xD9EFF7F6))
+            }
+            Box(Modifier.matchParentSize().background(Brush.verticalGradient(scrim)))
+        }) {
             val wallpaper = LocalGlassBackdrop.current
             val page = rememberGlassBackdrop()
             val keyboardVisible = WindowInsets.ime.getBottom(LocalDensity.current) > 0
