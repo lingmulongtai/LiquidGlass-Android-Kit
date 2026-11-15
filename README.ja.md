@@ -2,13 +2,15 @@
 
 CodexBar Android の Liquid Glass デザインを、他の Jetpack Compose アプリでも使える形にしたキットです。
 
-**[ブラウザで試す](https://liquid-glass-android-kit.vercel.app/)** · **[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
+**[ブラウザで試す](https://liquid-glass-android-kit.vercel.app/ja/)** · **[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
 
 <p align="center">
-  <a href="docs/media/overview.png"><img src="docs/media/overview.png" width="30%" alt="集中セッションのカードとフローティングタブバーがあるダークテーマの Overview" /></a>
-  <a href="docs/media/controls.png"><img src="docs/media/controls.png" width="30%" alt="45分に設定したスライダーとスイッチがあるダークテーマの Controls" /></a>
-  <a href="docs/media/materials.png"><img src="docs/media/materials.png" width="30%" alt="ガラスのぼかしと色を調整するライトテーマの Materials" /></a>
+  <a href="https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/usage-tabs.png"><img src="https://raw.githubusercontent.com/lingmulongtai/CodexBar-android/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/usage-tabs.png" width="30%" alt="残り使用量とプロバイダーカードがある CodexBar の Usage 画面" /></a>
+  <a href="https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/trends-tabs.png"><img src="https://raw.githubusercontent.com/lingmulongtai/CodexBar-android/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/trends-tabs.png" width="30%" alt="クォータの推移グラフがある CodexBar の Trends 画面" /></a>
+  <a href="https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/connections-tabs.png"><img src="https://raw.githubusercontent.com/lingmulongtai/CodexBar-android/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/connections-tabs.png" width="30%" alt="スマートフォンと Windows の取得元を選べる CodexBar の Connections 画面" /></a>
 </p>
+
+上の3枚は CodexBar Android v0.16.5 の Usage・Trends・Connections 画面です。Liquid Glass テーマを適用し、デモ用データで撮影されています。 [画像の出典と撮影条件](https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/README.md)。
 
 ## 動きのデモ
 
