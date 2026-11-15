@@ -2,7 +2,7 @@
 
 CodexBar Android の Liquid Glass デザインを、他の Jetpack Compose アプリでも使える形にしたキットです。
 
-**[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
+**[ブラウザで試す](https://liquid-glass-android-kit.vercel.app/)** · **[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
 
 <p align="center">
   <a href="docs/media/overview.png"><img src="docs/media/overview.png" width="30%" alt="集中セッションのカードとフローティングタブバーがあるダークテーマの Overview" /></a>
@@ -14,10 +14,10 @@ CodexBar Android の Liquid Glass デザインを、他の Jetpack Compose ア�
 
 | ボタンを押す | タブをドラッグして離す |
 | --- | --- |
-| [![Start session ボタンを押すと広がり、指を離すと元のサイズに戻る](docs/media/button.gif)](docs/media/button.mp4) | [![タブバーのレンズが指に追従し、指を離すと Materials に収まる](docs/media/tabs.gif)](docs/media/tabs.mp4) |
-| ガラスが指の下で広がり、離すと元の形に戻って操作が実行されます。 [MP4](docs/media/button.mp4) | レンズが指に追従し、離した位置から選択先へ収まります。 [MP4](docs/media/tabs.mp4) |
+| [![Start session ボタンを押すと広がり、指を離すと元のサイズに戻る](docs/media/button.webp)](docs/media/button.mp4) | [![タブバーのレンズが指に追従し、指を離すと Materials に収まる](docs/media/tabs.webp)](docs/media/tabs.mp4) |
+| [ボタンを押す · 60 fps MP4](docs/media/button.mp4) | [ドラッグして離す · 60 fps MP4](docs/media/tabs.mp4) |
 
-同梱のスターターアプリを Android 16 で実行して撮影しました。
+Android 17 の Galaxy S25 Ultra で、同梱のスターターアプリを撮影しました。 [背景写真は Unsplash の Simon Infanger](https://unsplash.com/photos/silhouette-of-mountain-sunset-GFk79rCfJsQ) によるものです。
 
 ## 新しいアプリを作る
 
