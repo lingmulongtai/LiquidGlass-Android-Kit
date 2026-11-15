@@ -1,10 +1,25 @@
 # Liquid Glass Android Kit
 
-[日本語](README.ja.md)
-
 Native Jetpack Compose components and a starter app based on the Liquid Glass
 design from CodexBar for Android. Use the starter to build a new app, or add the
 library and use only the components your app needs.
+
+**[Use this template](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Download the Maven ZIP](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [日本語](README.ja.md)
+
+<p align="center">
+  <a href="docs/media/overview.png"><img src="docs/media/overview.png" width="30%" alt="Dark Overview screen with a focus session card and floating navigation" /></a>
+  <a href="docs/media/controls.png"><img src="docs/media/controls.png" width="30%" alt="Dark Controls screen with a segmented control, a slider set to 45 minutes, and a switch" /></a>
+  <a href="docs/media/materials.png"><img src="docs/media/materials.png" width="30%" alt="Light Materials screen with controls for glass frost and tint" /></a>
+</p>
+
+## See it in motion
+
+| Button press | Tab drag and release |
+| --- | --- |
+| [![The Start session button widens while held and returns on release](docs/media/button.gif)](docs/media/button.mp4) | [![The floating tab lens follows a drag and settles on Materials when released](docs/media/tabs.gif)](docs/media/tabs.mp4) |
+| The glass widens under your finger and returns as the action runs. [MP4](docs/media/button.mp4) | The lens follows your drag and settles from the release point. [MP4](docs/media/tabs.mp4) |
+
+The screenshots and clips were captured from the included starter app on Android 16.
 
 ## Start an app
 
