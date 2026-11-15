@@ -16,10 +16,10 @@ library and use only the components your app needs.
 
 | Button press | Tab drag and release |
 | --- | --- |
-| [![The Start session button widens while held and returns on release](docs/media/button.gif)](docs/media/button.mp4) | [![The floating tab lens follows a drag and settles on Materials when released](docs/media/tabs.gif)](docs/media/tabs.mp4) |
-| The glass widens under your finger and returns as the action runs. [MP4](docs/media/button.mp4) | The lens follows your drag and settles from the release point. [MP4](docs/media/tabs.mp4) |
+| [![The Start session button widens while held and returns on release](docs/media/button.webp)](docs/media/button.mp4) | [![The floating tab lens follows a drag and settles on Materials when released](docs/media/tabs.webp)](docs/media/tabs.mp4) |
+| [Button press · 60 fps MP4](docs/media/button.mp4) | [Drag and release · 60 fps MP4](docs/media/tabs.mp4) |
 
-The screenshots and clips were captured from the included starter app on Android 16.
+Captured from the starter app on a Galaxy S25 Ultra running Android 17. [Backdrop photo by Simon Infanger on Unsplash](https://unsplash.com/photos/silhouette-of-mountain-sunset-GFk79rCfJsQ).
 
 ## Start an app
 
