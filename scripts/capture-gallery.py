@@ -69,11 +69,11 @@ class Gallery:
             raise RuntimeError("Android did not return a PNG")
         path.write_bytes(data)
 
-    def motion(self, name, gesture, crop):
+    def motion(self, name, gesture, crop, seconds):
         remote = f"/sdcard/liquidglass-{name}.mp4"
         raw = self.output / f"{name}-raw.mp4"
         recording = subprocess.Popen(
-            self.adb_args + ["shell", "screenrecord", "--size", f"{WIDTH}x{HEIGHT}", "--time-limit", "7", remote]
+            self.adb_args + ["shell", "screenrecord", "--size", f"{WIDTH}x{HEIGHT}", "--time-limit", str(seconds + 2), remote]
         )
         try:
             time.sleep(.7)
@@ -86,9 +86,9 @@ class Gallery:
                 recording.wait(timeout=5)
         self.adb("pull", remote, raw)
         pattern = f"crop={crop[0]}:{crop[1]}:{crop[2]}:{crop[3]},scale=560:-2:flags=lanczos"
-        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", "4.5", "-vf", pattern,
+        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", seconds, "-vf", pattern,
             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", self.output / f"{name}.mp4")
-        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", "4.5", "-filter_complex",
+        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", seconds, "-filter_complex",
             f"fps=16,{pattern},split[a][b];[a]palettegen[p];[b][p]paletteuse=dither=sierra2_4a",
             "-loop", "0", self.output / f"{name}.gif")
         raw.unlink()
@@ -106,7 +106,8 @@ class Gallery:
         self.still("overview")
 
         x, y = self.center("Start session")
-        self.motion("button", f"input touchscreen swipe {x} {y} {x} {y} 550", (WIDTH - 48, 480, 24, max(0, y - 378) // 2 * 2))
+        self.motion("button", f"input touchscreen swipe {x} {y} {x} {y} 550",
+                    (WIDTH - 48, 480, 24, max(0, y - 378) // 2 * 2), seconds=4)
         self.node("Session in progress")
         self.tap("Finish session")
 
@@ -120,7 +121,7 @@ class Gallery:
         for x in points:
             gesture.extend([f"input touchscreen motionevent MOVE {x} {y0}", "sleep .06"])
         gesture.extend(["sleep .2", f"input touchscreen motionevent UP {stop} {y0}"])
-        self.motion("tabs", "; ".join(gesture), (WIDTH, 338, 0, HEIGHT - 338))
+        self.motion("tabs", "; ".join(gesture), (WIDTH, 338, 0, HEIGHT - 338), seconds=9)
         self.node("Container material")
         self.tap("Use light theme", "content-desc")
         self.node("Use dark theme", "content-desc")
