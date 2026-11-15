@@ -1,10 +1,6 @@
 name: Capture gallery
 
 on:
-  pull_request:
-    paths:
-      - '.github/workflows/gallery.yml'
-      - 'scripts/capture-gallery.py'
   workflow_dispatch:
 
 permissions:
