@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101215">
+  <meta name="description" content="An open-source Liquid Glass design kit for native Android. Try the components, build with Jetpack Compose, or start from the GitHub template.">
+  <title>Liquid Glass · Android Kit</title>
+  <link rel="icon" type="image/png" href="/icon.png">
+  <link rel="preload" as="image" href="/assets/gallery-sunset.jpg">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header layout">
+    <a class="wordmark" href="./"><span class="seal" aria-hidden="true"></span>Liquid Glass</a>
+    <nav aria-label="Main navigation">
+      <a href="#playground">Playground</a>
+      <a href="#android">Android</a>
+      <a href="#install">Install</a>
+    </nav>
+    <a class="source-link" href="https://github.com/lingmulongtai/LiquidGlass-Android-Kit">GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero layout" aria-labelledby="hero-title">
+      <div class="hero-intro">
+        <p class="platform"><span aria-hidden="true"></span> For Jetpack Compose</p>
+        <h1 id="hero-title">Liquid Glass<br><em>for Android.</em></h1>
+        <p class="lede">Glass that bends the scene behind it and responds to your touch. Build with the full starter or bring a single component into your own app.</p>
+        <div class="hero-actions">
+          <a class="cta primary" href="https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate">Use the template <span aria-hidden="true">↗</span></a>
+          <a class="cta text" href="#playground">Try the glass <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="hero-preview">
+        <div class="scene" id="scene">
+          <canvas class="optics" aria-hidden="true"></canvas>
+          <div class="scene-top"><span>LIVE WEB PREVIEW</span><button type="button" class="mode-button" id="appearance" aria-pressed="false" aria-label="Use light glass">☼</button></div>
+          <div class="scene-center">
+            <div class="scene-panel glass" data-lens="26">
+              <div class="panel-icon" aria-hidden="true"><span></span></div>
+              <div><strong id="scene-title">Focus session</strong><small id="scene-subtitle">Ready when you are.</small></div>
+            </div>
+            <button class="scene-press glass" type="button" data-lens="23" id="scene-press">Start session</button>
+          </div>
+          <div class="scene-footer">
+            <div class="glass tabs" data-tabs data-lens="31" role="tablist" aria-label="Preview screens">
+              <span class="tab-lens" data-lens="25" aria-hidden="true"></span>
+              <button type="button" role="tab" aria-selected="true" aria-controls="scene-content" id="scene-tab-overview"><span aria-hidden="true">◈</span>Overview</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="scene-content" id="scene-tab-controls"><span aria-hidden="true">≡</span>Controls</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="scene-content" id="scene-tab-material"><span aria-hidden="true">◐</span>Materials</button>
+            </div>
+            <div class="sr-only" id="scene-content" role="tabpanel" aria-labelledby="scene-tab-overview">Overview</div>
+          </div>
+        </div>
+        <div class="scene-caption"><span><span class="status-dot"></span> Interactive browser preview</span><span>Drag the photo or hold and slide the tabs</span></div>
+      </div>
+    </section>
+
+    <section class="section layout" id="playground" aria-labelledby="lab-title">
+      <div class="section-title">
+        <h2 id="lab-title">Playground</h2>
+        <p>Try each control here, then copy its native Compose API.</p>
+      </div>
+
+      <div class="component-grid">
+        <article class="component">
+          <div class="component-preview centered" data-tint="blue">
+            <button type="button" class="press-example glass" id="button-demo" aria-pressed="false">Start session</button>
+          </div>
+          <div class="component-body">
+            <h3>Button</h3>
+            <p>Hold to stretch the glass. Release to activate.</p>
+            <details class="snippet" data-code="button"><summary>GlassButton <span>＋</span></summary></details>
+          </div>
+        </article>
+
+        <article class="component">
+          <div class="component-preview centered" data-tint="indigo">
+            <div class="tabs glass" data-tabs role="tablist" aria-label="Example navigation">
+              <span class="tab-lens" aria-hidden="true"></span>
+              <button type="button" role="tab" aria-selected="true" aria-controls="tab-demo-value" id="tab-demo-home"><span aria-hidden="true">◈</span>Home</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="tab-demo-value" id="tab-demo-stats"><span aria-hidden="true">≡</span>Stats</button>
+              <button type="button" role="tab" aria-selected="false" aria-controls="tab-demo-value" id="tab-demo-settings"><span aria-hidden="true">◐</span>Settings</button>
+            </div>
+            <div class="sr-only" id="tab-demo-value" role="tabpanel" aria-labelledby="tab-demo-home">Home</div>
+          </div>
+          <div class="component-body">
+            <h3>Floating tabs</h3>
+            <p>The lens tracks a drag and settles where you release.</p>
+            <details class="snippet" data-code="tabs"><summary>GlassNavigationBar <span>＋</span></summary></details>
+          </div>
+        </article>
+
+        <article class="component">
+          <div class="component-preview centered" data-tint="sage">
+            <div class="segmented glass" role="group" aria-label="Focus preset">
+              <button type="button" aria-pressed="true">25 min</button>
+              <button type="button" aria-pressed="false">45 min</button>
+              <button type="button" aria-pressed="false">60 min</button>
+            </div>
+          </div>
+          <div class="component-body">
+            <h3>Segmented control</h3>
+            <p>Move between a small set of choices.</p>
+            <details class="snippet" data-code="segmented"><summary>GlassSegmentedControl <span>＋</span></summary></details>
+          </div>
+        </article>
+
+        <article class="component">
+          <div class="component-preview centered" data-tint="berry">
+            <label class="demo-scale">
+              <span>Session length <output id="slider-value" for="slider-demo">25 min</output></span>
+              <input type="range" id="slider-demo" min="15" max="60" step="5" value="25">
+            </label>
+          </div>
+          <div class="component-body">
+            <h3>Slider</h3>
+            <p>Drag the handle to set a value.</p>
+            <details class="snippet" data-code="slider"><summary>GlassSlider <span>＋</span></summary></details>
+          </div>
+        </article>
+
+        <article class="component">
+          <div class="component-preview centered" data-tint="sea">
+            <label class="switch-row glass"><span>Lens haptics</span><input type="checkbox" role="switch" checked><span class="switch-track" aria-hidden="true"></span></label>
+          </div>
+          <div class="component-body">
+            <h3>Switch</h3>
+            <p>Flip between on and off.</p>
+            <details class="snippet" data-code="switch"><summary>GlassSwitch <span>＋</span></summary></details>
+          </div>
+        </article>
+
+        <article class="component">
+          <div class="component-preview centered" data-tint="amber">
+            <label class="glass search-field"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search sessions"><span class="sr-only">Search sessions</span></label>
+          </div>
+          <div class="component-body">
+            <h3>Text field</h3>
+            <p>Try entering text or clearing the field.</p>
+            <details class="snippet" data-code="text"><summary>GlassTextField <span>＋</span></summary></details>
+          </div>
+        </article>
+      </div>
+
+      <article class="materials">
+        <div class="materials-intro">
+          <h3>Tune the material</h3>
+          <p>Adjust frost, bend, dispersion and rim. Copy the matching settings for a Compose container.</p>
+          <div class="scene material-preview" id="material-preview" aria-hidden="true">
+            <canvas class="optics"></canvas>
+            <div class="glass sample-lens" data-lens="32">Glass</div>
+          </div>
+        </div>
+        <div class="materials-form">
+          <div class="material-inputs">
+            <label>Frost <output for="frost">8 dp</output><input type="range" id="frost" min="0" max="24" value="8"></label>
+            <label>Bend <output for="bend">0.70</output><input type="range" id="bend" min="0" max="2" step="0.05" value="0.7"></label>
+            <label>Dispersion <output for="dispersion">0.30</output><input type="range" id="dispersion" min="0" max="1" step="0.05" value="0.3"></label>
+            <label>Rim <output for="rim">0.15</output><input type="range" id="rim" min="0" max="1" step="0.05" value="0.15"></label>
+          </div>
+          <div class="code-block"><div class="code-bar"><span>Kotlin</span><button type="button" data-copy="material-code">Copy</button></div><pre><code id="material-code"></code></pre></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section layout" id="android" aria-labelledby="android-title">
+      <div class="section-title">
+        <h2 id="android-title">On Android</h2>
+        <p>Real screens and 60 fps recordings from the Compose starter on Galaxy S25 Ultra.</p>
+      </div>
+      <div class="native-stills">
+        <figure><a href="/assets/overview.png"><img loading="lazy" src="/assets/overview.png" alt="Overview screen with a focus card and floating tab lens" width="864" height="1872"></a><figcaption>Overview</figcaption></figure>
+        <figure><a href="/assets/controls.png"><img loading="lazy" src="/assets/controls.png" alt="Controls screen with session presets and a haptics switch" width="864" height="1872"></a><figcaption>Controls</figcaption></figure>
+        <figure><a href="/assets/materials.png"><img loading="lazy" src="/assets/materials.png" alt="Material editor with glass tuning sliders" width="864" height="1872"></a><figcaption>Materials</figcaption></figure>
+      </div>
+      <div class="native-motion">
+        <figure><video controls playsinline muted preload="none" aria-label="Android button press recording" src="/assets/button.mp4" poster="/assets/button-poster.webp" width="816" height="480"></video><figcaption>Button press</figcaption></figure>
+        <figure><video controls playsinline muted preload="none" aria-label="Android floating tab drag recording" src="/assets/tabs.mp4" poster="/assets/tabs-poster.webp" width="864" height="338"></video><figcaption>Tab drag and release</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section layout" id="install" aria-labelledby="install-title">
+      <div class="section-title">
+        <h2 id="install-title">Start building</h2>
+        <p>Use the whole template or install only the library.</p>
+      </div>
+      <div class="install-grid">
+        <article class="install-card">
+          <h3>Start a new app</h3>
+          <p>Create a repository from the template and open it in Android Studio with Android SDK 36 and JDK 17. Run the included gallery before adding your own screens.</p>
+          <a class="cta primary" href="https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate">Use the template <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="install-card">
+          <h3>Add to an existing app</h3>
+          <p>Download the Maven ZIP, unpack it into <code>third_party/liquidglass</code>, and add the local Maven repository to Gradle. Then include the library.</p>
+          <div class="code-block">
+            <div class="code-bar"><span>build.gradle.kts</span><button type="button" data-copy="install-code">Copy</button></div>
+            <pre><code id="install-code">implementation("io.github.lingmulongtai:liquidglass-compose:0.1.0")</code></pre>
+          </div>
+          <a class="cta secondary" href="https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/download/v0.1.0/liquidglass-compose-0.1.0-maven.zip">Download Maven ZIP <span aria-hidden="true">↗</span></a>
+          <a class="inline-link" href="https://github.com/lingmulongtai/LiquidGlass-Android-Kit/blob/main/docs/integration.md">Integration guide <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+      <p class="compat">Android 8.0+ · Live refraction on supported Android 13+ devices · Blur on Android 12 · Tint fallback on Android 8–11</p>
+    </section>
+  </main>
+
+  <footer class="site-footer layout">
+    <a class="wordmark" href="./"><span class="seal" aria-hidden="true"></span>Liquid Glass</a>
+    <p>Photo by <a href="https://unsplash.com/photos/silhouette-of-mountain-sunset-GFk79rCfJsQ">Simon Infanger on Unsplash</a>. Inspired by <a href="https://github.com/0kzh/glisse">Glisse</a> and <a href="https://github.com/Kyant0/AndroidLiquidGlass">AndroidLiquidGlass</a>.</p>
+    <a href="https://github.com/lingmulongtai/LiquidGlass-Android-Kit/blob/main/LICENSE">MIT license <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

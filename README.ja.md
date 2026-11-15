@@ -2,7 +2,7 @@
 
 CodexBar Android の Liquid Glass デザインを、他の Jetpack Compose アプリでも使える形にしたキットです。
 
-**[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
+**[ブラウザで試す](https://liquid-glass-android-kit.vercel.app/)** · **[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
 
 <p align="center">
   <a href="docs/media/overview.png"><img src="docs/media/overview.png" width="30%" alt="集中セッションのカードとフローティングタブバーがあるダークテーマの Overview" /></a>

@@ -3,6 +3,9 @@
 /.idea/
 **/build/
 /local.properties
+/.env.local
+/.vercel/
+/site-dist/
 *.iml
 *.jks
 *.keystore
