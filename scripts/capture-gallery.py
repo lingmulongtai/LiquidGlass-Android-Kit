@@ -46,6 +46,8 @@ class Gallery:
             except (ET.ParseError, subprocess.SubprocessError):
                 pass
             time.sleep(.7)
+        (self.output / "missing-control.xml").write_bytes(self.adb("shell", "cat", "/sdcard/liquidglass-gallery.xml"))
+        self.still("missing-control")
         raise AssertionError(f"Gallery control missing: {label}")
 
     @staticmethod
@@ -71,7 +73,7 @@ class Gallery:
         remote = f"/sdcard/liquidglass-{name}.mp4"
         raw = self.output / f"{name}-raw.mp4"
         recording = subprocess.Popen(
-            self.adb_args + ["shell", "screenrecord", "--size", f"{WIDTH}x{HEIGHT}", "--time-limit", "5", remote]
+            self.adb_args + ["shell", "screenrecord", "--size", f"{WIDTH}x{HEIGHT}", "--time-limit", "7", remote]
         )
         try:
             time.sleep(.7)
@@ -84,9 +86,9 @@ class Gallery:
                 recording.wait(timeout=5)
         self.adb("pull", remote, raw)
         pattern = f"crop={crop[0]}:{crop[1]}:{crop[2]}:{crop[3]},scale=560:-2:flags=lanczos"
-        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", "3.5", "-vf", pattern,
+        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", "4.5", "-vf", pattern,
             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-movflags", "+faststart", self.output / f"{name}.mp4")
-        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", "3.5", "-filter_complex",
+        run("ffmpeg", "-v", "error", "-y", "-i", raw, "-t", "4.5", "-filter_complex",
             f"fps=16,{pattern},split[a][b];[a]palettegen[p];[b][p]paletteuse=dither=sierra2_4a",
             "-loop", "0", self.output / f"{name}.gif")
         raw.unlink()
@@ -113,7 +115,12 @@ class Gallery:
         x2, _ = self.center("Materials")
         # Release off-center so the landing is visible after the finger lifts.
         stop = round(x2 - (x2 - x1) * .22)
-        self.motion("tabs", f"input touchscreen swipe {x0} {y0} {stop} {y0} 1000", (WIDTH, 338, 0, HEIGHT - 338))
+        points = [round(x0 + (stop - x0) * step / 7) for step in range(1, 8)]
+        gesture = [f"input touchscreen motionevent DOWN {x0} {y0}", "sleep .4"]
+        for x in points:
+            gesture.extend([f"input touchscreen motionevent MOVE {x} {y0}", "sleep .06"])
+        gesture.extend(["sleep .2", f"input touchscreen motionevent UP {stop} {y0}"])
+        self.motion("tabs", "; ".join(gesture), (WIDTH, 338, 0, HEIGHT - 338))
         self.node("Container material")
         self.tap("Use light theme", "content-desc")
         self.node("Use dark theme", "content-desc")
