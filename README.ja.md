@@ -2,7 +2,7 @@
 
 CodexBar Android の Liquid Glass デザインを、他の Jetpack Compose アプリでも使える形にしたキットです。
 
-**[ブラウザで試す](https://liquid-glass-android-kit.vercel.app/)** · **[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
+**[ブラウザで試す](https://liquid-glass-android-kit.vercel.app/ja/)** · **[テンプレートを使う](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Maven ZIP を入手](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [English](README.md)
 
 <p align="center">
   <a href="https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/usage-tabs.png"><img src="https://raw.githubusercontent.com/lingmulongtai/CodexBar-android/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/usage-tabs.png" width="30%" alt="残り使用量とプロバイダーカードがある CodexBar の Usage 画面" /></a>

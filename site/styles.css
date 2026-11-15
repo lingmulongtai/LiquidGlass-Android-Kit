@@ -40,6 +40,11 @@ section { scroll-margin-top: 30px; }
 .site-header nav a, .source-link { font-size: .875rem; color: var(--muted); white-space: nowrap; }
 .site-header nav a:hover, .source-link:hover { color: var(--ink); }
 .source-link span { margin-left: 3px; color: var(--accent); }
+.header-actions { display: flex; align-items: center; gap: 15px; }
+.language-switch { display: flex; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 9px; }
+.language-switch a { padding: 5px 8px; border-radius: 6px; color: var(--muted); font-size: .75rem; white-space: nowrap; }
+.language-switch a:hover { color: var(--ink); }
+.language-switch [aria-current="page"] { background: #273039; color: var(--ink); }
 
 .hero { display: grid; grid-template-columns: minmax(330px, .92fr) minmax(0, 1.26fr); align-items: center; gap: clamp(35px, 5vw, 76px); padding-block: 86px 92px; }
 .hero-intro { padding-bottom: 29px; }
@@ -47,6 +52,7 @@ section { scroll-margin-top: 30px; }
 .platform span { width: 8px; height: 8px; border-radius: 50%; background: #84d0cd; box-shadow: 0 0 12px #7dccd19b; }
 .hero h1 { margin: 0; font: 800 clamp(3.45rem, 5.8vw, 6.25rem)/.98 var(--display); letter-spacing: -.082em; }
 .hero h1 em { font-style: normal; color: #adbdc7; background: linear-gradient(103deg, #e2e6eb 0%, #9eacbe 54%, #b7e1eb 100%); background-clip: text; -webkit-text-fill-color: transparent; }
+html[lang="ja"] .hero h1 em { font-size: .74em; letter-spacing: -.035em; }
 .lede { font-size: clamp(1rem, 1.26vw, 1.2rem); line-height: 1.62; max-width: 34ch; color: var(--muted); margin: 26px 0; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 18px; }
 .cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 11px 15px; border-radius: 9px; font-size: .88rem; font-weight: 700; min-height: 43px; transition: background .18s, color .18s, transform .18s; }
@@ -275,9 +281,13 @@ figcaption { font-size: .83rem; color: var(--muted); text-align: center; padding
   .native-motion { gap: 9px; }
   .install-card { padding: 15px; }
 }
+@media (max-width: 560px) {
+  .site-header { display: grid; grid-template-columns: 1fr auto; height: auto; padding-block: 12px; gap: 12px; }
+  .site-header nav { grid-row: 2; grid-column: 1 / -1; gap: 18px; }
+  .header-actions { gap: 10px; }
+}
 @media (max-width: 500px) {
   .layout { width: calc(100% - 30px); }
-  .site-header nav a[href="#android"] { display: none; }
   .wordmark { font-size: .87rem; gap: 6px; }
   .seal { width: 18px; height: 18px; }
   .scene-caption { font-size: .69rem; }

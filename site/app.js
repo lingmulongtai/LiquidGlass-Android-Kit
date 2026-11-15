@@ -1,4 +1,7 @@
 import { createOptics } from './optics.js';
+import { copyFor } from './copy.mjs';
+
+const text = copyFor(document.documentElement.lang);
 
 const snippets = {
   button: 'GlassButton(onClick = onStart) {\n    Text("Start session")\n}',
@@ -31,10 +34,12 @@ for (const details of document.querySelectorAll('[data-code]')) {
   const kind = details.dataset.code;
   const block = document.createElement('div');
   block.className = 'code-block';
-  block.innerHTML = '<div class="code-bar"><span>Kotlin</span><button type="button">Copy</button></div><pre><code></code></pre>';
+  block.innerHTML = '<div class="code-bar"><span>Kotlin</span><button type="button"></button></div><pre><code></code></pre>';
   const code = block.querySelector('code');
   code.id = 'code-' + kind;
-  block.querySelector('button').dataset.copy = code.id;
+  const button = block.querySelector('button');
+  button.dataset.copy = code.id;
+  button.textContent = text.copy;
   highlight(code, snippets[kind]);
   details.append(block);
 }
@@ -65,8 +70,8 @@ async function copy(text) {
 for (const button of document.querySelectorAll('[data-copy]')) {
   button.addEventListener('click', async () => {
     const code = document.getElementById(button.dataset.copy);
-    button.textContent = await copy(code.textContent) ? 'Copied' : 'Select code';
-    setTimeout(() => { button.textContent = 'Copy'; }, 1600);
+    button.textContent = await copy(code.textContent) ? text.copied : text.selectCode;
+    setTimeout(() => { button.textContent = text.copy; }, 1600);
   });
 }
 
@@ -85,13 +90,13 @@ let sceneTab = 0;
 
 function refreshScene() {
   const scenes = [
-    ['Focus session', activeSession ? 'Session in progress' : 'Ready when you are.'],
-    ['Focus controls', 'Session presets and haptics.'],
-    ['Glass materials', 'Adjust frost, bend and rim.']
+    [text.focusSession, activeSession ? text.sessionActive : text.ready],
+    [text.focusControls, text.focusPresets],
+    [text.glassMaterials, text.glassAdjustments]
   ];
   title.textContent = scenes[sceneTab][0];
   subtitle.textContent = scenes[sceneTab][1];
-  sceneButton.textContent = activeSession ? 'Finish session' : 'Start session';
+  sceneButton.textContent = activeSession ? text.sessionFinish : text.sessionStart;
   render(360);
 }
 
@@ -111,7 +116,7 @@ appearance.addEventListener('click', () => {
   scene.classList.toggle('is-light', opticalState.light);
   appearance.textContent = opticalState.light ? '☾' : '☼';
   appearance.setAttribute('aria-pressed', String(opticalState.light));
-  appearance.setAttribute('aria-label', opticalState.light ? 'Use dark glass' : 'Use light glass');
+  appearance.setAttribute('aria-label', opticalState.light ? text.useDark : text.useLight);
   render();
 });
 
@@ -231,7 +236,7 @@ const buttonDemo = document.querySelector('#button-demo');
 buttonDemo.addEventListener('click', () => {
   const active = buttonDemo.getAttribute('aria-pressed') === 'true';
   buttonDemo.setAttribute('aria-pressed', String(!active));
-  buttonDemo.textContent = active ? 'Start session' : 'Finish session';
+  buttonDemo.textContent = active ? text.sessionStart : text.sessionFinish;
 });
 
 for (const group of document.querySelectorAll('.segmented')) {
@@ -256,7 +261,7 @@ function bindRange(range, update) {
 }
 
 bindRange(document.querySelector('#slider-demo'), value => {
-  document.querySelector('#slider-value').value = value + ' min';
+  document.querySelector('#slider-value').value = value + text.minutes;
 });
 
 for (const key of Object.keys(material)) {
