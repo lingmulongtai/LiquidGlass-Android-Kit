@@ -7,10 +7,12 @@ library and use only the components your app needs.
 **[Live playground](https://liquid-glass-android-kit.vercel.app/)** · **[Use this template](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/generate)** · **[Download the Maven ZIP](https://github.com/lingmulongtai/LiquidGlass-Android-Kit/releases/latest)** · [日本語](README.ja.md)
 
 <p align="center">
-  <a href="docs/media/overview.png"><img src="docs/media/overview.png" width="30%" alt="Dark Overview screen with a focus session card and floating navigation" /></a>
-  <a href="docs/media/controls.png"><img src="docs/media/controls.png" width="30%" alt="Dark Controls screen with a segmented control, a slider set to 45 minutes, and a switch" /></a>
-  <a href="docs/media/materials.png"><img src="docs/media/materials.png" width="30%" alt="Light Materials screen with controls for glass frost and tint" /></a>
+  <a href="https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/usage-tabs.png"><img src="https://raw.githubusercontent.com/lingmulongtai/CodexBar-android/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/usage-tabs.png" width="30%" alt="CodexBar Usage tab with remaining allowances and provider cards" /></a>
+  <a href="https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/trends-tabs.png"><img src="https://raw.githubusercontent.com/lingmulongtai/CodexBar-android/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/trends-tabs.png" width="30%" alt="CodexBar Trends tab with a quota history chart" /></a>
+  <a href="https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/connections-tabs.png"><img src="https://raw.githubusercontent.com/lingmulongtai/CodexBar-android/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/connections-tabs.png" width="30%" alt="CodexBar Connections tab with phone and Windows sources" /></a>
 </p>
+
+The three screenshots show the Usage, Trends and Connections tabs in CodexBar for Android v0.16.5 with the Liquid Glass theme and demo data. [Source screenshots and capture notes](https://github.com/lingmulongtai/CodexBar-android/blob/847b3f3d3d924e0e5733b4dd9365b6a846d61863/docs/images/releases/v0.16.5/README.md).
 
 ## See it in motion
 
