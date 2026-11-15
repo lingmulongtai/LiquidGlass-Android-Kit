@@ -1,0 +1,153 @@
+package io.github.lingmulongtai.liquidglass
+
+import androidx.compose.material3.Typography
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+
+private val ExpressiveSans = FontFamily.SansSerif
+
+private val BaseTypography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Black,
+        fontSize = 56.sp,
+        lineHeight = 60.sp,
+        letterSpacing = (-1.5).sp
+    ),
+    displayMedium = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 44.sp,
+        lineHeight = 48.sp,
+        letterSpacing = (-1).sp
+    ),
+    displaySmall = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 36.sp,
+        lineHeight = 40.sp,
+        letterSpacing = (-0.5).sp
+    ),
+    headlineLarge = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        lineHeight = 38.sp,
+        letterSpacing = (-0.35).sp
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 28.sp,
+        lineHeight = 34.sp,
+        letterSpacing = (-0.25).sp
+    ),
+    headlineSmall = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 24.sp,
+        lineHeight = 30.sp
+    ),
+    titleLarge = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 22.sp,
+        lineHeight = 28.sp
+    ),
+    titleMedium = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 16.sp,
+        lineHeight = 22.sp,
+        letterSpacing = 0.1.sp
+    ),
+    titleSmall = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.15.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.2.sp
+    ),
+    bodySmall = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        lineHeight = 17.sp,
+        letterSpacing = 0.25.sp
+    ),
+    labelLarge = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp
+    ),
+    labelMedium = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.35.sp
+    ),
+    labelSmall = TextStyle(
+        fontFamily = ExpressiveSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 11.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.35.sp
+    )
+)
+
+private fun Typography.withFamily(family: FontFamily) = Typography(
+    displayLarge = displayLarge.copy(fontFamily = family),
+    displayMedium = displayMedium.copy(fontFamily = family),
+    displaySmall = displaySmall.copy(fontFamily = family),
+    headlineLarge = headlineLarge.copy(fontFamily = family),
+    headlineMedium = headlineMedium.copy(fontFamily = family),
+    headlineSmall = headlineSmall.copy(fontFamily = family),
+    titleLarge = titleLarge.copy(fontFamily = family),
+    titleMedium = titleMedium.copy(fontFamily = family),
+    titleSmall = titleSmall.copy(fontFamily = family),
+    bodyLarge = bodyLarge.copy(fontFamily = family),
+    bodyMedium = bodyMedium.copy(fontFamily = family),
+    bodySmall = bodySmall.copy(fontFamily = family),
+    labelLarge = labelLarge.copy(fontFamily = family),
+    labelMedium = labelMedium.copy(fontFamily = family),
+    labelSmall = labelSmall.copy(fontFamily = family)
+)
+
+internal val LiquidGlassTypography = BaseTypography.withFamily(InterFamily).let { base ->
+    Typography(
+        displayLarge = base.displayLarge.copy(fontWeight = FontWeight.Bold, lineHeight = 64.sp),
+        displayMedium = base.displayMedium.copy(fontWeight = FontWeight.Bold, lineHeight = 54.sp),
+        displaySmall = base.displaySmall.copy(fontWeight = FontWeight.Bold, lineHeight = 44.sp),
+        headlineLarge = base.headlineLarge.copy(lineHeight = 40.sp),
+        headlineMedium = base.headlineMedium.copy(lineHeight = 36.sp),
+        headlineSmall = base.headlineSmall.copy(lineHeight = 32.sp),
+        titleLarge = base.titleLarge.copy(fontWeight = FontWeight.SemiBold, lineHeight = 30.sp),
+        titleMedium = base.titleMedium.copy(fontSize = 17.sp, lineHeight = 26.sp, letterSpacing = 0.sp),
+        titleSmall = base.titleSmall.copy(fontSize = 15.sp, lineHeight = 23.sp, letterSpacing = 0.sp),
+        bodyLarge = base.bodyLarge.copy(fontSize = 17.sp, lineHeight = 27.sp, letterSpacing = 0.sp),
+        bodyMedium = base.bodyMedium.copy(fontSize = 15.sp, lineHeight = 24.sp, letterSpacing = 0.sp),
+        bodySmall = base.bodySmall.copy(fontSize = 13.sp, lineHeight = 21.sp, letterSpacing = 0.sp),
+        labelLarge = base.labelLarge.copy(fontWeight = FontWeight.SemiBold, lineHeight = 22.sp, letterSpacing = 0.sp),
+        labelMedium = base.labelMedium.copy(lineHeight = 20.sp, letterSpacing = 0.sp),
+        labelSmall = base.labelSmall.copy(lineHeight = 18.sp, letterSpacing = 0.sp)
+    )
+}
